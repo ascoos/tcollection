@@ -1,7 +1,7 @@
 <?php
 /*
 dobu {
-    file:id(`example-0000007`),name(`diff`) {
+    file:id(`example-0000097`) {
         ascoos {
             logo {`
                   __ _  ___  ___ ___   ___   ___     ___   ___
@@ -45,8 +45,8 @@ echo "<h1>TCollection::diff() and intersect()</h1>";
 
 
 // ────────────────────────────────────────────────
-// <English> Creation of two collections with common and different objects
-// <Greek>   Δημιουργία δύο συλλογών με κοινά και διαφορετικά αντικείμενα
+// <EN> Creation of two collections with common and different objects
+// <EL> Δημιουργία δύο συλλογών με κοινά και διαφορετικά αντικείμενα
 // ────────────────────────────────────────────────
 $collectionA = new TCollection();
 $collectionB = new TCollection();
@@ -64,24 +64,24 @@ $collectionB->add($obj3); // common
 $collectionB->add(new stdClass()); // only in B
 
 // ────────────────────────────────────────────────
-// <English> Differences (objects only in A)
-// <Greek>   Διαφορές (αντικείμενα μόνο στο A)
+// <EN> Differences (objects only in A)
+// <EL> Διαφορές (αντικείμενα μόνο στο A)
 // ────────────────────────────────────────────────
 $onlyInA = $collectionA->diff($collectionB);
 echo "<h2>Differences (objects only in A)</h2>";
 echo "<pre>"."Only at A: " . count($onlyInA) . " objects\n"."</pre>";
 
 // ────────────────────────────────────────────────
-// <English> Common objects (A ∩ B)
-// <Greek>   Κοινά αντικείμενα (A ∩ B)
+// <EN> Common objects (A ∩ B)
+// <EL> Κοινά αντικείμενα (A ∩ B)
 // ────────────────────────────────────────────────
 $common = $collectionA->intersect($collectionB);
 echo "<h2>Common objects (A ∩ B)</h2>";
 echo "<pre>"."Commons: " . count($common) . " objects\n"."</pre>";
 
 // ────────────────────────────────────────────────
-// <English> Memory cleaning
-// <Greek>   Καθαρισμός μνήμης
+// <EN> Memory cleaning
+// <EL> Καθαρισμός μνήμης
 // ────────────────────────────────────────────────
 $collectionA->Free();
 $collectionB->Free();
