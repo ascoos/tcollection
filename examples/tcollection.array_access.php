@@ -41,7 +41,7 @@ use Ascoos\OS\Kernel\Core\Collections\TCollection;
 $startTime = microtime(true);
 $startMem  = memory_get_usage();
 
-echo "<h1>TCollection ArrayAccess (offsetExists, offsetGet, offsetSet, offsetUnset)</h1>";
+echo "<h1>TCollection ArrayAccess</h1>";
 
 // ────────────────────────────────────────────────
 // <EN> Creating collection
@@ -60,6 +60,7 @@ $collection[10]  = new stdClass();
 // <EN> offsetExists + offsetGet - existence check and retrieval
 // <EL> offsetExists + offsetGet - έλεγχος ύπαρξης και ανάκτηση
 // ────────────────────────────────────────────────
+echo "<h2>offsetExists + offsetGet - existence check and retrieval</h2>";
 if (isset($collection['a'])) {
     echo "<pre>"."The key 'a' exists\n"."</pre>";
     $itemA = $collection['a'];
@@ -73,6 +74,7 @@ if (isset($collection[10])) {
 // <EN> offsetUnset - removal of an element (like unset($collection['key']))
 // <EL> offsetUnset - αφαίρεση στοιχείου (σαν unset($collection['key']))
 // ────────────────────────────────────────────────
+echo "<h2>offsetUnset - removal of an element</h2>";
 unset($collection['a']);
 
 if (!isset($collection['a'])) {
@@ -83,6 +85,7 @@ if (!isset($collection['a'])) {
 // <EN> Addition without key (push like array)
 // <EL> Προσθήκη χωρίς κλειδί (push σαν array)
 // ────────────────────────────────────────────────
+echo "<h2>Addition without key (push like array)</h2>";
 $collection[] = new stdClass();  // offsetSet with null offset -> add()
 
 echo "<pre>"."Total elements after the changes: " . $collection->count() . "\n"."</pre>";
